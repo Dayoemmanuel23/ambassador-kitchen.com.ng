@@ -25,7 +25,8 @@
     "dotenv": "^16.6.1",
     "express": "^4.21.2",
     "mongoose": "^7.8.7",
-    "nodemailer": "^7.0.10"
+    "nodemailer": "^7.0.10",
+    "serverless-http": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
