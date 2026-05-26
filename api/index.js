@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Catering API is running!', version: '1.0.0' });
 });
 
-app.get('/api/test-email', async (req, res) => {
+app.get('/test-email', async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"Ambassador Kitchen" <${process.env.MAIL_USER}>`,
@@ -56,7 +56,7 @@ app.get('/api/test-email', async (req, res) => {
   }
 });
 
-app.post('/api/contact', async (req, res) => {
+app.post('/contact', async (req, res) => {
   await connectToDatabase();
   try {
     const { name, email, phone, eventType, message } = req.body;
@@ -93,12 +93,12 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-app.get('/api/health', async (req, res) => {
+app.get('/health', async (req, res) => {
   await connectToDatabase();
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.get('/api/contacts/count', async (req, res) => {
+app.get('/contacts/count', async (req, res) => {
   await connectToDatabase();
   try {
     const count = await Contact.countDocuments();
