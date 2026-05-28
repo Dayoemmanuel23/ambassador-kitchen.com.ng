@@ -56,6 +56,12 @@ app.get('/api/test-email', async (req, res) => {
   }
 });
 
+app.get('/api/_env_status', (req, res) => {
+  const keys = ['MONGODB_URI', 'MAIL_HOST', 'MAIL_PORT', 'MAIL_SECURE', 'MAIL_USER', 'MAIL_PASS'];
+  const envPresence = Object.fromEntries(keys.map(key => [key, Boolean(process.env[key])]));
+  res.json({ success: true, envPresence });
+});
+
 app.post('/api/contact', async (req, res) => {
   await connectToDatabase();
   try {
