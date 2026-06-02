@@ -2,11 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the project root (where index.html, frontend/, images, videos live)
+app.use(express.static(path.join(__dirname, '..')));
 
 // MongoDB connection (cached)
 let cachedDb = null;
@@ -86,6 +90,11 @@ app.get('/api/contacts/count', async (req, res) => {
   await connectToDatabase();
   const count = await Contact.countDocuments();
   res.json({ success: true, count });
+});
+
+// Catch-all route: serve index.html for any request not handled by API or static files
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 const serverless = require('serverless-http');
