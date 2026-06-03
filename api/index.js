@@ -97,5 +97,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
+// SPA Fallback: Serve index.html for all non-API routes that don't match files
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
 const serverless = require('serverless-http');
 module.exports = serverless(app);
