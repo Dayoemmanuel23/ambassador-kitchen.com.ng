@@ -9,9 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the project root (where index.html, frontend/, images, videos live)
-app.use(express.static(path.join(__dirname, '..')));
-
 // MongoDB connection (cached)
 let cachedDb = null;
 async function connectToDatabase() {
@@ -35,7 +32,7 @@ const contactSchema = new mongoose.Schema({
 }, { timestamps: true });
 const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
 
-app.get('/api/', (req, res) => {
+app.get(['/api', '/api/'], (req, res) => {
   res.json({ message: 'Catering API is running!', version: '1.0.0' });
 });
 
@@ -92,15 +89,7 @@ app.get('/api/contacts/count', async (req, res) => {
   res.json({ success: true, count });
 });
 
-// Catch-all route: serve index.html for any request not handled by API or static files
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
-
-// SPA Fallback: Serve index.html for all non-API routes that don't match files
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
+// No catch-all route here — this function only handles /api traffic.
 
 const serverless = require('serverless-http');
 module.exports = serverless(app);
