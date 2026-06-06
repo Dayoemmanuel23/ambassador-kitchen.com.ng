@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve frontend assets and index.html from the project root
+app.use(express.static(path.join(__dirname, '..')));
+
 // MongoDB connection (cached)
 let cachedDb = null;
 async function connectToDatabase() {
@@ -89,7 +92,10 @@ app.get('/api/contacts/count', async (req, res) => {
   res.json({ success: true, count });
 });
 
-// No catch-all route here — this function only handles /api traffic.
+// Serve the SPA for any non-API route.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
 
 const serverless = require('serverless-http');
 module.exports = serverless(app);
