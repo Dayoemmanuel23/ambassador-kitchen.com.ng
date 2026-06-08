@@ -1,17 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" },
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "frontend/**", "use": "@vercel/static" },
-    { "src": "*.jpg", "use": "@vercel/static" },
-    { "src": "*.png", "use": "@vercel/static" },
-    { "src": "*.mp4", "use": "@vercel/static" },
-    { "src": "*.MOV", "use": "@vercel/static" }
+    { "src": "api/index.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "^/api/(.*)$", "dest": "/api/index.js" },
-    { "handle": "filesystem" },
-    { "src": "^/(.*)$", "dest": "/index.html" }
+    { "src": "^/(.*)$", "dest": "/$1" }
   ]
 }
