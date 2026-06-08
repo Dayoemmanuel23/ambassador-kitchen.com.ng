@@ -92,10 +92,5 @@ app.get('/api/contacts/count', async (req, res) => {
   res.json({ success: true, count });
 });
 
-// Serve the SPA for any non-API route.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
-
 const serverless = require('serverless-http');
 module.exports = serverless(app);
