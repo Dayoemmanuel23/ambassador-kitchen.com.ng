@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ambassador Kitchen & Catering Services Limited </title>
-    <link rel="icon" type="image/png" href="frontend/logo.png" />
+    <link rel="icon" type="image/png" href="frontend/logo.png?v=2" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global Styles */
@@ -55,11 +55,11 @@
         .logo-left {
             height: 80px;
             display: flex;
-            align-items: left;
+            align-items: center;
         }
 
         .logo-img {
-            height: 60%;
+            height: 55px;
             width: auto;
             max-width: 180px;
         }
@@ -94,8 +94,6 @@
             white-space: normal;
             text-align: center;
         }
-
-        /* Removed custom font-face due to missing files */
 
         .main-nav {
             display: flex;
@@ -142,7 +140,7 @@
         
         /* Hero Section */
         .hero {
-            background-image: url('frontpic.png');
+            background-image: url('frontpic.png?v=2');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -624,7 +622,7 @@
     <header>
         <div class="header-container">
             <div class="logo-left">
-                <img src="frontend/logo.png" alt="Logo" class="logo-img">
+                <img src="frontend/logo.png?v=2" alt="Logo" class="logo-img">
             </div>
             
             <div class="brand-center">
@@ -660,7 +658,7 @@
                     <p>From traditional favorites to innovative contemporary cuisine, we create memorable dining experiences that delight all senses.</p>
                 </div>
                 <div class="about-image">
-                    <img src="use11.jpg" alt="11">
+                    <img src="use11.jpg?v=2" alt="About Ambassador Kitchen">
                 </div>
             </div>
         </div>
@@ -671,14 +669,15 @@
             <h2 class="section-title">Our Menu</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="wedding.png" alt="Wedding Buffet">
+                    <img src="wedding.png?v=2" alt="Wedding Buffet">
                     <div class="menu-item-content">
                         <h3>Wedding Package</h3>
                         <p>Elegant multi-course meals with customizable options for your special day.</p>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <video controls>
+                    <video controls playsinline preload="metadata">
+                        <source src="main.MOV" type="video/quicktime">
                         <source src="main.MOV" type="video/mp4">
                     </video>
                     <div class="menu-item-content">
@@ -687,7 +686,7 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <img src="corporate.jpg" alt="corporate">
+                    <img src="corporate.jpg?v=2" alt="Corporate Events">
                     <div class="menu-item-content">
                         <h3>Corporate Events</h3>
                         <p>Professional catering solutions for meetings, conferences, and corporate parties.</p>
@@ -702,88 +701,51 @@
             <h2 class="section-title">Our Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="friday1.jpg" alt="friday1">
+                    <img src="friday1.jpg?v=2" alt="Friday Event 1">
                 </div>
                 <div class="gallery-item">
-                    <video controls>
+                    <video controls playsinline preload="metadata">
                         <source src="celebrate.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <img src="use3.jpg" alt="3">
+                    <img src="use3.jpg?v=2" alt="Catering Setup">
                 </div>
                 <div class="gallery-item">
-                    <img src="use1.jpg" alt="1">
+                    <img src="use1.jpg?v=2" alt="Food Presentation">
                 </div>
                 <div class="gallery-item">
-                    <img src="use9.jpg" alt="9">
+                    <img src="use9.jpg?v=2" alt="Event Setup">
                 </div>
                 <div class="gallery-item">
-                    <img src="use2.jpg" alt="2">
+                    <img src="use2.jpg?v=2" alt="Cuisine">
                 </div>
                 <div class="gallery-item">
-                    <video controls>
+                    <video controls playsinline preload="metadata">
                         <source src="legend.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <img src="friday2.jpg" alt="friday2">
+                    <img src="friday2.jpg?v=2" alt="Friday Event 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="wedding1.png" alt="Wedding 1">
+                    <img src="wedding1.png?v=2" alt="Wedding Setup">
                 </div>
                 <div class="gallery-item">
-                    <video controls>
+                    <video controls playsinline preload="metadata">
                         <source src="use5.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <img src="use6.jpg" alt="6">
+                    <img src="use6.jpg?v=2" alt="Catering">
                 </div>
                 <div class="gallery-item">
-                    <img src="use8.jpg" alt="8">
+                    <img src="use8.jpg?v=2" alt="Dining">
                 </div>
             </div>
         </div>
     </section>
 
-    <!--
-    <section class="testimonials" id="partners" style="display:none;">
-        <div class="container">
-            <h2 class="section-title">Clients we Serve</h2>
-            <div class="testimonials-grid" style="flex-wrap:wrap;justify-content:center;gap:40px;align-items:center;">
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/aradel.png" alt="Aradel Holdings" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">Aradel Holdings</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/bakerhughes.png" alt="Baker Hughes" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">Baker Hughes</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;text-align:center;">
-                    <img src="frontend/partners/bat.png" alt="British American Tobacco" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;display:block;width:100%;">British American Tobacco</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/sap.png" alt="SAP" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">SAP</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/generalelectric.png" alt="General Electric" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">General Electric</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/bovas.png" alt="Bovas" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">Bovas</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;max-width:180px;">
-                    <img src="frontend/partners/shell.png" alt="Shell" style="height:70px;object-fit:contain;margin-bottom:10px;" />
-                    <span style="font-weight:bold;font-size:1.1em;">Shell</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
@@ -849,7 +811,7 @@
         <div class="container">
             <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;">
                 <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-                    <img src="frontend/logo.png" alt="Logo" style="height:40px;" />
+                    <img src="frontend/logo.png?v=2" alt="Logo" style="height:40px;" />
                     <span style="font-size:1.7em;font-weight:bold;text-align:center;line-height:1.1;">Ambassador Kitchen & Catering Services Limited</span>
                 </div>
                 <p style="margin:10px 0 0 0;text-align:center;max-width:600px;">Providing exceptional catering services for all occasions since 2005.</p>
@@ -878,7 +840,7 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Ambassador Kitchen & Catering Services Ltd. 2c, Josephine Fingesi Street, Off Wale Olateju Street, Lekki Phase 1, Lagos. </p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ambassador Kitchen & Catering Services Ltd. 2c, Josephine Fingesi Street, Off Wale Olateju Street, Lekki Phase 1, Lagos.</p>
                     <p><i class="fas fa-phone"></i> (+234) 8033304352, 9093322282</p>
                     <p><i class="fas fa-envelope"></i> info@ambassadorkitchen.com.ng</p>
                 </div>
@@ -902,12 +864,10 @@ document.addEventListener('DOMContentLoaded', function() {
             eventType: form.eventType ? form.eventType.value : form['event-type'].value,
             message: form.message.value.trim()
         };
-        // Show sending state
         const btn = form.querySelector('.btn');
         const originalText = btn.textContent;
         btn.textContent = 'Sending...';
         btn.disabled = true;
-        // Remove previous message
         let msgDiv = form.querySelector('.form-message');
         if (msgDiv) msgDiv.remove();
         try {
